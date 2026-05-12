@@ -1,0 +1,78 @@
+[project]
+name = "shared-ride-platform"
+version = "0.1.0"
+description = "AI-powered distributed shared ride platform"
+requires-python = ">=3.11"
+
+# =========================================================
+# BLACK
+# =========================================================
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+# =========================================================
+# RUFF
+# =========================================================
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+]
+
+ignore = [
+    "E501",
+    "B008"
+]
+
+# =========================================================
+# MYPY
+# =========================================================
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = "alembic.*"
+ignore_errors = true
+# =========================================================
+# PYTEST
+# =========================================================
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+# =========================================================
+# COVERAGE
+# =========================================================
+
+[tool.coverage.run]
+source = ["app"]
+
+# =========================================================
+# UV
+# =========================================================
+
+[tool.uv]
+dev-dependencies = [
+    "black",
+    "ruff",
+    "mypy",
+    "pytest",
+    "pytest-asyncio",
+    "pre-commit",
+]

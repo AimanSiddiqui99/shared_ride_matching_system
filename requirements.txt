@@ -1,25 +1,81 @@
+# -------------------------
+# WEB API
+# -------------------------
 fastapi
 uvicorn[standard]
 
+# -------------------------
+# DATABASE
+# -------------------------
 sqlalchemy
 asyncpg
 psycopg2-binary
-
 alembic
 
+# PostgreSQL geospatial support
+geoalchemy2
+shapely
+
+# -------------------------
+# DATA VALIDATION & SETTINGS
+# -------------------------
 pydantic
 pydantic-settings
 
-redis
+# -------------------------
+# CACHE / MESSAGE BROKER
+# -------------------------
+redis[hiredis]
 
+# -------------------------
+# BACKGROUND TASKS
+# -------------------------
 celery
+flower
 
-python-dotenv
-
-structlog
-
+# -------------------------
+# HTTP CLIENTS
+# -------------------------
 httpx
 
-geoalchemy2
+# -------------------------
+# ENVIRONMENT CONFIG
+# -------------------------
+python-dotenv
 
-shapely
+# -------------------------
+# LOGGING
+# -------------------------
+structlog
+
+# -------------------------
+# TESTING
+# -------------------------
+pytest
+pytest-asyncio
+
+# -------------------------
+# CODE QUALITY
+# -------------------------
+black
+ruff
+mypy
+pre-commit
+
+# -------------------------
+# TYPE SUPPORT
+# -------------------------
+types-redis
+types-python-dateutil
+
+# -------------------------
+# SECURITY
+# -------------------------
+python-jose[cryptography]
+passlib[bcrypt]
+
+# -------------------------
+# PERFORMANCE
+# -------------------------
+orjson
+uvloop
